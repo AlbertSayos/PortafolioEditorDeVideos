@@ -1,0 +1,63 @@
+@media screen and (max-width: 1000px) {
+    body{
+        width: 94%;
+    }
+
+    .video {
+        width: 100%;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+        align-content: center;
+    }
+
+    .video-list {
+        display: flex;
+        height: 35vh;
+        width: 50%;
+        overflow: overlay;
+        text-overflow: ellipsis;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+
+    .video-player {
+        display: flex;
+        background-color: white;
+        align-content: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .banner img {
+        max-height: 220px;
+        height: 10vh;
+    }
+
+    .minute-label {
+        font-size: 8px;
+
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+
+    body{
+        width: 90%;
+    }
+
+    .video-list {
+        height: 30vh;
+        width: 80%;
+    }
+
+    .yt-target {
+        width: 80%;
+    }
+
+}

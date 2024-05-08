@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reproductor de Video Interactivo</title>
+<link rel="stylesheet" href="styles/style3.css">
+<link rel="stylesheet" href="styles/stylemovil.css">
+</head>
+<body>
+    <div class="banner">
+        <img src="image/PORTAFOLIO2.png">
+        <img src="image/mundoTarga.png">
+    </div>
+<div class="container">
+    <div class="video" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="video-list">
+            <h2> MIS VIDEOS</h2>
+            <!-- Aquí irá la lista de videos -->
+        </div>
+        <div class="video-player">
+            <div id="youtube-player"></div>
+        </div>
+    </div>
+    <div id="timeline-container" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div id="videoActual"></div>
+        <div id="timeline"></div>
+        <div id="progress"></div>
+        <div id="minute-markers-container"></div>
+    </div>
+    
+</div>
+
+<script src="./scripts/videoInfo.js"></script>
+<script src="./scripts/generarVideos.js"></script>
+<script src="./scripts/cargarReproductor.js"></script>
+<script src="./scripts/arrastrarVideo.js"></script>
+<!-- Importa la API de YouTube -->
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<!-- Importa el archivo de funciones de video -->
+<script src="./scripts/videoFunctions.js"></script>
+
+</body>
+</html>
+
