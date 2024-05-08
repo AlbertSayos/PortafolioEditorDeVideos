@@ -12,6 +12,7 @@
         <img src="image/PORTAFOLIO2.png">
         <img src="image/mundoTarga.png">
     </div>
+    <div id="dragInstruction">Arrastra los videos para reproducirlos</div>
 <div class="container">
     <div class="video" ondrop="drop(event)" ondragover="allowDrop(event)">
         <div class="video-list">
@@ -40,6 +41,21 @@
 
 <!-- Importa el archivo de funciones de video -->
 <script src="./scripts/videoFunctions.js"></script>
+<script>
+    // Función para mostrar la ventana de diálogo en la posición del clic
+    function showDragInstruction(event) {
+        var dragInstruction = document.getElementById("dragInstruction");
+        dragInstruction.style.display = "block"; // Mostrar la ventana de diálogo
+        dragInstruction.style.left = event.clientX + 'px'; // Establecer la posición izquierda
+        dragInstruction.style.top = event.clientY + 'px'; // Establecer la posición superior
+        setTimeout(function() {
+            dragInstruction.style.display = "none"; // Ocultar la ventana de diálogo después de un tiempo
+        }, 2000); // Tiempo en milisegundos (en este caso, 2 segundos)
+    }
+
+    // Agregar un evento de clic en toda la página para mostrar la ventana de diálogo
+    document.addEventListener('click', showDragInstruction);
+</script>
 
 </body>
 </html>

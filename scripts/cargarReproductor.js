@@ -66,7 +66,6 @@ function updateTimelineMarks(durationSeconds) {
 
     // Calcular la duración del video en minutos
     var durationMinutes = Math.floor(durationSeconds / 60);
-    console.log(durationMinutes)
     // Iterar sobre cada minuto y agregar marcadores y etiquetas de texto
     for (var minute = 1; minute <= durationMinutes; minute++) {
         // Calcular la posición del marcador de minuto
