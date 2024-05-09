@@ -13,15 +13,16 @@
 
     .video-list {
         display: flex;
-        height: 35vh;
-        width: 50%;
+        height: 25vh;
+        width: 100%;
         overflow: overlay;
         text-overflow: ellipsis;
-        align-items: center;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: nowrap;
     }
-
-
+    .listas{
+        width: 100%;
+    }
 
     .video-player {
         display: flex;
@@ -34,16 +35,20 @@
     }
 
     .banner img {
-        max-height: 220px;
-        height: 10vh;
+        height: 100px;
     }
 
     .minute-label {
-        font-size: 8px;
+        font-size: 12px;
 
     }
+    
     .ocultoMovil{
         display: none;
+    }
+
+    .yt-target .video-title{
+        font-size: 15px;
     }
 
 }
@@ -55,8 +60,8 @@
     }
 
     .video-list {
-        height: 30vh;
-        width: 80%;
+        height: 20vh;
+        width: 98%;
     }
 
     .yt-target {
@@ -64,6 +69,18 @@
     }
     .ocultoMovil{
         display: none;
+    }
+    .minute-label {
+        font-size: 8px;
+
+    }
+
+    .yt-target .video-title{
+        font-size: 10px;
+    }
+
+    .banner img {
+        height: 50px;
     }
 
 }

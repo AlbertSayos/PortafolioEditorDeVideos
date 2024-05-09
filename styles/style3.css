@@ -15,7 +15,7 @@ body{
     padding: 10px;
     box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.5);
     border: 5px #000000 solid;
-    min-width: 450px;
+    min-width: 320px;
 }
 
 
@@ -51,7 +51,7 @@ body{
 .video-list {
     display: flex;
     height: 50vh;
-    width: 50%;
+    width: 100%;
     flex-direction: column;
     flex-wrap: nowrap;
     overflow: overlay;
@@ -61,7 +61,7 @@ body{
 }
 
 
-.video-list h2{
+.listas h2{
     display: flex;
     flex-direction: column;
     background-color: #313664;
@@ -110,6 +110,7 @@ body{
 
 .info h3{
     color: #000000;
+    pointer-events: none;
 }
 
 /* Estilos para la línea de tiempo y marcadores */
@@ -209,12 +210,12 @@ body{
     background: transparent;
     justify-content: space-between;
     flex-wrap: nowrap;
-    width: 98vw;
+    width: 95vw;
 }
 
 .banner img{
     max-height: 220px;
-    height: 20vh;
+    height: 17vh;
 }
 
 #dragInstruction {

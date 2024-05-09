@@ -35,7 +35,7 @@ var videoInfo = {
       {
         "kind": "youtube#video",
         "etag": "K2lJGh4C_VLygQu96gNzMNvtT6M",
-        "videoId": "uxOFnaT2TlI",
+        "id": "uxOFnaT2TlI",
         "contentDetails": {
           "duration": "PT23M23S" //lo pondremos manual
         },
@@ -129,4 +129,3 @@ var videoInfo = {
       "resultsPerPage": 50
     }
   }
-  
