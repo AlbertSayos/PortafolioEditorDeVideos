@@ -1,80 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reproductor de Video Interactivo</title>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
 
-<!-- Metaetiquetas Open Graph -->
-    <meta property="og:title" content="Portafolio Editor de Videos">
-    <meta property="og:description" content="Visita mi portafolio como editor de videos y descubre mis proyectos y habilidades.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/AlbertSayos/PortafolioEditorDeVideos/main/image/prev-img-portafolio.png">
-    <meta property="og:url" content="https://albertsayos.github.io/PortafolioEditorDeVideos/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Portafolio Editor de Videos">
+    <!-- Metaetiquetas Open Graph -->
+        <meta property="og:title" content="Portafolio Editor de Videos">
+        <meta property="og:description" content="Visita mi portafolio como editor de videos y descubre mis proyectos y habilidades.">
+        <meta property="og:image" content="https://raw.githubusercontent.com/AlbertSayos/PortafolioEditorDeVideos/main/image/prev-img-portafolio.png">
+        <meta property="og:url" content="https://albertsayos.github.io/PortafolioEditorDeVideos/">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Portafolio Editor de Videos">
 
-    <!-- Metaetiquetas de Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Portafolio Editor de Videos">
-    <meta name="twitter:description" content="Visita mi portafolio como editor de videos y descubre mis proyectos y habilidades.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/AlbertSayos/PortafolioEditorDeVideos/main/image/prev-img-portafolio.png">
+        <!-- Metaetiquetas de Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Portafolio Editor de Videos">
+        <meta name="twitter:description" content="Visita mi portafolio como editor de videos y descubre mis proyectos y habilidades.">
+        <meta property="og:image" content="https://raw.githubusercontent.com/AlbertSayos/PortafolioEditorDeVideos/main/image/prev-img-portafolio.png">
 
-    <!-- Metaetiqueta de palabras clave -->
-    <meta name="keywords" content="video editor, editor de videos, portafolio, YouTube, producción de video, edición de video, proyectos de video, habilidades de edición, servicios de video">
+        <!-- Metaetiqueta de palabras clave -->
+        <meta name="keywords" content="video editor, editor de videos, portafolio, YouTube, producción de video, edición de video, proyectos de video, habilidades de edición, servicios de video">
 
-<link rel="stylesheet" href="styles/style3.css">
-<link rel="stylesheet" href="styles/stylemovil.css">
+    <link rel="stylesheet" href="styles/style3.css">
+    <link rel="stylesheet" href="styles/stylemovil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
-    <div class="banner">
-        <img src="image/PORTAFOLIO2.png">
-        <img src="image/mundoTarga.png">
-    </div>
-    <button id="toggleContactoBtn" class="oculto">Contacto</button>
-    <div id="contacto" class="contacto ocultoEscritorio">
-        <div class="contactos">
-            <p>alberto.sayos.daniel@gmail.com</p>
-            <p>+5491123873922</p>
+        <div class="banner">
+            <img src="image/PORTAFOLIO2.png">
+            <img src="image/mundoTarga.png">
         </div>
-        <div class="redes-sociales">
-            <a href="https://www.youtube.com/@MundoTarga" target="_blank"><img src="image/youtube.png" ></a>
-            <a href="https://www.youtube.com/@Targa-300/"><img src="image/youtube.png" ></a>
-            <a href="https://www.linkedin.com/in/albert-sayos/" target="_blank"><img src="image/linkedin.png" ></a>
-        </div>
-    </div>
-    <div id="dragInstruction" class="ocultoMovil">Arrastra los videos para reproducirlos</div>
-<div class="container">
-    <div class="video" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <div class="listas">
-            <h2> MIS VIDEOS</h2>
-            <div class="video-list">
-                <!-- Aquí irá la lista de videos -->
+        <button id="toggleContactoBtn" class="oculto">Contacto</button>
+        <div id="contacto" class="contacto ocultoEscritorio">
+            <div class="contactos">
+                <div class="contacto2">
+                    <i class="fas fa-envelope"></i>
+                    <p id="correo">alberto.sayos.daniel@gmail.com</p>
+                    <i class="fas fa-copy" onclick="copiarAlPortapapeles(document.getElementById('correo').innerText)"></i>
+                </div>
+                <div class="contacto2">
+                    <i class="fas fa-phone"></i>
+                    <p id="telefono">+5491123873922</p>
+                    <i class="fas fa-copy" onclick="copiarAlPortapapeles(document.getElementById('telefono').innerText)"></i>
+                </div>
+            </div>
+            
+            <button class="btn-open" onclick="openModal()">Sobre mí</button>
+
+            <div class="redes-sociales">
+                <a href="https://www.youtube.com/@MundoTarga" target="_blank"><img src="image/youtube.png" ></a>
+                <a href="https://www.youtube.com/@Targa-300/"><img src="image/youtube.png" ></a>
+                <a href="https://www.linkedin.com/in/albert-sayos/" target="_blank"><img src="image/linkedin.png" ></a>
             </div>
         </div>
-        <div class="video-player">
-            <div id="youtube-player"></div>
+        <div id="dragInstruction" class="ocultoMovil">Arrastra los videos para reproducirlos</div>
+    <div class="container">
+        <div class="video" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="listas">
+                <h2> MIS VIDEOS</h2>
+                <div class="video-list">
+                    <!-- Aquí irá la lista de videos -->
+                </div>
+            </div>
+            <div class="video-player">
+                <div id="youtube-player"></div>
+            </div>
+        </div>
+        <div id="timeline-container" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div id="videoActual"></div>
+            <div id="timeline"></div>
+            <div id="progress"></div>
+            <div id="minute-markers-container"></div>
+        </div>
+        
+    </div>
+
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Hola, soy Alberto Sayós 👋</h2>
+            <p>Soy editor de videos con pasión por los videojuegos y la creación de contenido audiovisual. Me encanta dar vida a las historias, crear montajes atractivos y explorar nuevas formas de comunicar visualmente.</p>
+            <p>En este portafolio, encontrarás algunos de mis proyectos más recientes, incluyendo series de juego de <b>Ark</b> donde edité cada episodio para capturar la esencia de la aventura.</p>
+            <p>Trabajo con herramientas como <b>Adobe Premiere Pro</b> y <b>Photoshop</b>, siempre buscando mejorar mis habilidades y aprender nuevas técnicas.</p>
+            <p>Si te interesa colaborar o necesitas ayuda con tu proyecto, ¡no dudes en contactarme!</p>
         </div>
     </div>
-    <div id="timeline-container" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <div id="videoActual"></div>
-        <div id="timeline"></div>
-        <div id="progress"></div>
-        <div id="minute-markers-container"></div>
-    </div>
-    
-</div>
 
-<script src="./scripts/videoInfo.js"></script>
-<script src="./scripts/generarVideos.js"></script>
-<script src="./scripts/cargarReproductor.js"></script>
-<script src="./scripts/arrastrarVideo.js"></script>
-<!-- Importa la API de YouTube -->
-<script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
 
-<!-- Importa el archivo de funciones de video -->
-<script src="./scripts/videoFunctions.js"></script>
-<script src="./scripts/mensajeArrastrar.js"></script>
+        function copiarAlPortapapeles(texto) {
+            navigator.clipboard.writeText(texto)
+        }
+    </script>
+
+    <script src="./scripts/videoInfo.js"></script>
+    <script src="./scripts/generarVideos.js"></script>
+    <script src="./scripts/cargarReproductor.js"></script>
+    <script src="./scripts/arrastrarVideo.js"></script>
+    <!-- Importa la API de YouTube -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <!-- Importa el archivo de funciones de video -->
+    <script src="./scripts/videoFunctions.js"></script>
+    <script src="./scripts/mensajeArrastrar.js"></script>
 
 
-</body>
+    </body>
 </html>

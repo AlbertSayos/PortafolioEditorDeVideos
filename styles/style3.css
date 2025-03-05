@@ -259,6 +259,15 @@ body{
     font-size: 1.2rem;
 }
 
+.contacto2{
+    display: flex    ;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 110%;
+}
+
 .contacto h2 {
     margin-bottom: 10px;
 }
@@ -286,6 +295,55 @@ body{
 
 .oculto{
     display: none;
+}
+
+.btn-open {
+    background-color: #272e6b;
+    color: #f0c52d;
+    padding: 10px 20px;
+    /* border: none; */
+    border-radius: 24px;
+    cursor: pointer;
+    margin: 20px;
+    font-weight: 800;
+    border: 2px black solid;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+.modal-content {
+    background-color: #313664;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #f0c52d;
+    width: 80%;
+    max-width: 600px;
+    z-index: 100;
+}
+
+.modal-content p,h2 {
+    color: #f0c52d;
+    text-align: center;
+}
+
+.close {
+    color: #f0c52d;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover {
+    color: #fff;
 }
 
 /* Estilos flotantes para dispositivos móviles */
