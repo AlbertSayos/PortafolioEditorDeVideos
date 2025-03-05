@@ -58,3 +58,21 @@ function pad(num, size) {
     while (s.length < size) s = "0" + s;
     return s;
 }
+
+
+// Mostrar la zona de contacto en dispositivos móviles
+function toggleContacto() {
+    var contacto = document.getElementById("contacto");
+    if (contacto.classList.contains("visibleMovil")) {
+        contacto.classList.remove("visibleMovil");
+    } else {
+        contacto.classList.add("visibleMovil");
+    }
+}
+
+// Agregar un evento de clic para mostrar/ocultar la zona de contacto en móviles
+document.addEventListener('click', function(event) {
+    if (window.innerWidth <= 760) {
+        toggleContacto();
+    }
+});
