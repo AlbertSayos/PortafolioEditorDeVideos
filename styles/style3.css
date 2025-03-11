@@ -60,6 +60,18 @@ body{
     background-color: #f7f7f7;
 }
 
+.short-list {
+    display: flex;
+    height: 43vh;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow: overlay;
+    text-overflow: ellipsis;
+    align-items: center;
+    background-color: #f7f7f7;
+}
+
 
 .listas h2{
     display: flex;
@@ -345,6 +357,42 @@ body{
 .close:hover {
     color: #fff;
 }
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: #313664;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.tab-button {
+    padding: 10px;
+    background-color: #313664;
+    color: #f0c52d;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tab-button:hover {
+    background-color: #f0c52d;
+    color: black
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #ecf0f1;
+}
+
+.tab-content.active {
+    display: block;
+}
+
 
 /* Estilos flotantes para dispositivos móviles */
 @media (max-width: 760px) {

@@ -54,6 +54,8 @@ function createYtTarget2(video) {
 
 // Acceder a los datos de videoInfo
 var videos = videoInfo.items;
+var shortInfo = shortInfo.items;
+//var videos = shortInfo.items;
 
 // Obtener el contenedor de la lista de videos
 var videoListContainer = document.querySelector(".video-list");
@@ -67,6 +69,24 @@ videos.forEach(function(video) {
         var ytTarget2 = createYtTarget2(video);
         videoActualContainer.appendChild(ytTarget2);
         i++;
+        
     }
+    
     videoListContainer.appendChild(ytTarget);
+});
+
+var videoListContainer2 = document.querySelector(".short-list");
+//var videoActualContainer = document.getElementById("videoActual");
+console.log(videoListContainer2);
+// Generar elementos yt-target y agregarlos al contenedor
+var i = 0; // Sacamos la variable i fuera del bucle forEach
+shortInfo.forEach(function(shortInfo) {
+    var ytTarget = createYtTarget(shortInfo);
+    if (i == 0) {
+        var ytTarget2 = createYtTarget2(shortInfo);
+        videoActualContainer.appendChild(ytTarget2);
+        i++;
+    }
+    
+    videoListContainer2.appendChild(ytTarget);
 });
