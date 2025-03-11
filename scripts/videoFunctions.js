@@ -59,7 +59,7 @@ function pad(num, size) {
     return s;
 }
 
-
+/*
 // Mostrar la zona de contacto en dispositivos móviles
 function toggleContacto() {
     var contacto = document.getElementById("contacto");
@@ -76,3 +76,4 @@ document.addEventListener('click', function(event) {
         toggleContacto();
     }
 });
+*/

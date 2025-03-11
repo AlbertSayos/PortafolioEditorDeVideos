@@ -20,6 +20,17 @@
         flex-direction: row;
         flex-wrap: nowrap;
     }
+
+    .short-list {
+        display: flex;
+        height: 25vh;
+        width: 100%;
+        overflow: overlay;
+        text-overflow: ellipsis;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
     .listas{
         width: 100%;
     }

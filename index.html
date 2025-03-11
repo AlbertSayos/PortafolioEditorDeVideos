@@ -32,37 +32,32 @@
             <img src="image/PORTAFOLIO2.png">
             <img src="image/mundoTarga.png">
         </div>
-        <button id="toggleContactoBtn" class="oculto">Contacto</button>
-        <div id="contacto" class="contacto ocultoEscritorio">
-            <div class="contactos">
-                <div class="contacto2">
-                    <i class="fas fa-envelope"></i>
-                    <p id="correo">alberto.sayos.daniel@gmail.com</p>
-                    <i class="fas fa-copy" onclick="copiarAlPortapapeles(document.getElementById('correo').innerText)"></i>
-                </div>
-                <div class="contacto2">
-                    <i class="fas fa-phone"></i>
-                    <p id="telefono">+5491123873922</p>
-                    <i class="fas fa-copy" onclick="copiarAlPortapapeles(document.getElementById('telefono').innerText)"></i>
-                </div>
-            </div>
-            
-            <button class="btn-open" onclick="openModal()">Sobre mí</button>
 
-            <div class="redes-sociales">
-                <a href="https://www.youtube.com/@MundoTarga" target="_blank"><img src="image/youtube.png" ></a>
-                <a href="https://www.youtube.com/@Targa-300/"><img src="image/youtube.png" ></a>
-                <a href="https://www.linkedin.com/in/albert-sayos/" target="_blank"><img src="image/linkedin.png" ></a>
-            </div>
-        </div>
+        <button id="toggleContactoBtn" class="oculto" onclick="openContacto()">Contacto</button>
+
+        
         <div id="dragInstruction" class="ocultoMovil">Arrastra los videos para reproducirlos</div>
     <div class="container">
         <div class="video" ondrop="drop(event)" ondragover="allowDrop(event)">
             <div class="listas">
-                <h2> MIS VIDEOS</h2>
-                <div class="video-list">
-                    <!-- Aquí irá la lista de videos -->
+                <div class="tabs">
+                    <button class="tab-button" onclick="openTab('largos')">Videos Largos</button>
+                    <button class="tab-button" onclick="openTab('shorts')">Shorts</button>
                 </div>
+            
+                <div id="largos" class="tab-content">
+                    <div class="video-list">
+                        <!-- Lista de videos largos -->
+                    </div>
+                </div>
+            
+                <div id="shorts" class="tab-content" style="display:none">
+                    <div class="short-list">
+                        <!-- Lista de shorts -->
+                    </div>
+                </div>
+            
+
             </div>
             <div class="video-player">
                 <div id="youtube-player"></div>
@@ -77,6 +72,29 @@
         
     </div>
 
+    <div id="contacto" class="contacto ocultoEscritorio">
+        <span class="close oculto" onclick="closeContacto()">&times;</span>
+        <div class="contactos">
+            <div class="contacto2">
+                <i class="fas fa-envelope"></i>
+                <p id="correo">alberto.sayos.daniel@gmail.com</p>
+                <i class="fas fa-copy" onclick="copiarAlPortapapeles(document.getElementById('correo').innerText)"></i>
+            </div>
+            <div class="contacto2">
+                <i class="fas fa-phone"></i>
+                <p id="telefono">+5491123873922</p>
+                <i class="fas fa-copy" onclick="copiarAlPortapapeles(document.getElementById('telefono').innerText)"></i>
+            </div>
+        </div>
+        
+        <button class="btn-open" onclick="openModal()">Sobre mí</button>
+
+        <div class="redes-sociales">
+            <a href="https://www.youtube.com/@MundoTarga" target="_blank" class="redes"><img src="image/youtube-ark.png" > <p>canal de ARK</p></a>
+            <a href="https://www.youtube.com/@Targa-300/"><img src="image/youtube-gta.png" > <p>canal de GTA</p></a>
+            <a href="https://www.linkedin.com/in/albert-sayos/" target="_blank"><img src="image/linkedin.png" > <P>Linkedin</P> </a>
+        </div>
+    </div>
     
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -97,12 +115,32 @@
             document.getElementById("myModal").style.display = "none";
         }
 
+        function openContacto() {
+            document.getElementById("contacto").classList.add("visibleMovil");
+
+        }
+        function closeContacto() {
+            document.getElementById("contacto").classList.remove("visibleMovil");
+        }
+
         function copiarAlPortapapeles(texto) {
             navigator.clipboard.writeText(texto)
         }
+
+        function openTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.style.display = 'none');
+
+            const activeTab = document.getElementById(tabName);
+            activeTab.style.display = 'block';
+        }
+
+        openTab('largos')
+
     </script>
 
     <script src="./scripts/videoInfo.js"></script>
+    <script src="./scripts/videoShort.js"></script>
     <script src="./scripts/generarVideos.js"></script>
     <script src="./scripts/cargarReproductor.js"></script>
     <script src="./scripts/arrastrarVideo.js"></script>
